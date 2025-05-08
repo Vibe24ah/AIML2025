@@ -1,7 +1,7 @@
 import os
 
 # Define the directory containing the images
-directory = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/Exam/Fred_pictures"
+directory = "../data/Fred_pictures"
 
 # Get a list of all files in the directory
 files = [f for f in os.listdir(directory) if f.lower().endswith(('.jpg', '.jpeg'))]

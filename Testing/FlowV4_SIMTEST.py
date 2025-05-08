@@ -14,17 +14,17 @@ from tqdm import tqdm  # Add this import at the top of the script
 # Paths to the folders
 folders = {
     "true": {
-        "production": '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/Production_images_true_shifted',
-        "comparison": "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/Images_for_comparison_true"
+        "production": '../data/Production_images_true_shifted',
+        "comparison": '../data/Images_for_comparison_true'
     },
     "false": {
-        "production": '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/Production_images_false_shifted',
-        "comparison": '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/Images_for_comparison_false'
+        "production": '../data/Production_images_false_shifted',
+        "comparison": '../data/Images_for_comparison_false'
     }
 }
 
 # Load the trained YOLOv8 model
-model = YOLO('/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/runs/NID_OBB_3/weights/best.pt')
+model = YOLO('../Models/runs/NID_OBB_3/weights/best.pt')
 
 # Initialize LPIPS metric
 loss_fn = lpips.LPIPS(net='alex')  # or net='vgg'
@@ -204,6 +204,6 @@ for label, paths in folders.items():
 
 # Save results to a CSV file
 df = pd.DataFrame(results)
-output_csv_path = '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/results.csv'
+output_csv_path = '../data/Final_pipeline/results.csv'
 df.to_csv(output_csv_path, index=False)
 print(f"Results saved to {output_csv_path}")

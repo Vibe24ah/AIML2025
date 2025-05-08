@@ -8,11 +8,11 @@ from ultralytics import YOLO
 model = YOLO("yolo11n-obb.pt")
 
 # Paths
-output_dir = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/runs"
+output_dir = "../Models/runs"
 
 # Train the model
 results = model.train(
-    data="/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/Output_for_yolo.yaml",
+    data="../data/Output_for_yolo.yaml",
     epochs=10,
     imgsz=640,
     batch=16,
@@ -27,7 +27,5 @@ results = model.train(
     patience = 4 # Number of epochs with no improvement after which training will be stopped
 )
 
-
 #validation
-
-metrics= model.val(data="/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/Output_for_yolo.yaml")
+metrics= model.val(data="../data/Output_for_yolo.yaml")

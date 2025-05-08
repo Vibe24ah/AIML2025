@@ -54,7 +54,7 @@ def crop_and_downscale_to_640x640(img):
     return resized
 
 # Load the template image
-template = cv2.imread("/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/Exam/IMG_9567.jpeg")
+template = cv2.imread("../data/production_image.jpeg")
 
 # Coordinates of the four corners of the image area on the puzzle box
 # Order: top-left, top-right, bottom-right, bottom-left
@@ -84,8 +84,8 @@ src_points = np.array([
 ], dtype="float32")
 
 # Load and replace with images from the folder
-replacement_folder = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/Exam/Fred_pictures"  # Folder with replacement photos
-output_folder = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/Exam/Training_V2/Test_images_2"
+replacement_folder = "../data/Fred_pictures"  # Folder with replacement photos
+output_folder = "../data/Training_V2/Test_images_2"
 os.makedirs(output_folder, exist_ok=True)
 
 # Get the list of replacement images
@@ -136,4 +136,4 @@ for filename in tqdm(replacement_files, desc="Processing images"):
     #with open(label_path, 'w') as f:
      #   f.write(f"0 {x_center:.6f} {y_center:.6f} {box_width:.6f} {box_height:.6f}\n")  # Class ID is 0
 
-print("✅ Puzzle box images and YOLO labels generated successfully!")
+print("Puzzle box images and YOLO labels generated successfully!")

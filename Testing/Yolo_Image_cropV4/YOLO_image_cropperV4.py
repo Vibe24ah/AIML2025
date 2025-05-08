@@ -4,10 +4,10 @@ import os
 import numpy as np
 
 # Load the trained YOLOv8 model
-model = YOLO("/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/runs/NID_OBB_3/weights/best.pt")
+model = YOLO("../data/runs/NID_OBB_3/weights/best.pt")
 
 # Path to the input image
-image_path = '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/Production_images_true_shifted/puzzle_399.jpeg'
+image_path = '../data/Production_images_true_shifted/puzzle_399.jpeg'
 
 # Run inference on the image
 results = model.predict(source=image_path, save=False, conf=0.5)

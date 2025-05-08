@@ -12,14 +12,14 @@ import torchvision.transforms as T
 import numpy as np
 
 # Load the trained YOLOv11 model
-model = YOLO("/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/runs/NID_OBB_3/weights/best.pt")
+model = YOLO("../Models/runs/NID_OBB_3/weights/best.pt")
 
 # Path to the input image
-image_path = '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/V4_FinalFlow/Production_images_shifted/puzzle_8.jpeg'
+image_path = '../data/Production_images_true_shifted/puzzle_8.jpeg' # change the image path to the one you want to test
 
 # Extract the ID from the filename (e.g., "Production_1.jpeg" → "1.jpeg")
 production_id = os.path.basename(image_path).split("_")[1].split(".")[0]  # Extract "1"
-comparison_folder = '/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/Exam/Final_flow/Images_for_comparison'
+comparison_folder = '../data/Images_for_comparison'
 comparison_image_path = os.path.join(comparison_folder, f"{production_id}.jpeg")
 
 # Run inference on the image
