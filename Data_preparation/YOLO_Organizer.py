@@ -3,9 +3,9 @@ import shutil
 import random
 
 # Paths
-input_images_folder = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/DATA/images"
-input_labels_folder = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/DATA/labels"
-output_folder = "/Users/victorberstrand/Desktop/UNI/CBS/AI and machine learning/TrainerV4/Output_for_yolo"
+input_images_folder = "../data/Output_for_yolo/train/images"
+input_labels_folder = "../data/Output_for_yolo/val/labels"
+output_folder = "../data/Output_for_yolo/Output_for_yolo_final"
 
 # Create train/val folders
 train_images = os.path.join(output_folder, "train/images")
@@ -74,4 +74,4 @@ move_files(train_data, train_images, train_labels)
 # Move val data
 move_files(val_data, val_images, val_labels)
 
-print("✅ Dataset organized successfully into 'Output_for_yolo'!")
+print("Dataset organized successfully into 'Output_for_yolo'!")
