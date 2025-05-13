@@ -54,4 +54,4 @@ for filename in tqdm(image_files, desc="Augmenting images"):
     # Save the augmented image to the output folder
     cv2.imwrite(output_path, augmented_image)
 
-print("Image augmentation complete! Augmented images saved to 'Final dataset'.")
+print("Image augmentation complete! "Shifted" images saved.")
